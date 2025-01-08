@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { IoIosCloseCircle } from "react-icons/io";
 export default function TopMobileMenu({toggleMenu}) {
   return (
@@ -13,5 +13,5 @@ export default function TopMobileMenu({toggleMenu}) {
             />
           </div>
   
-  )
+  );
 }

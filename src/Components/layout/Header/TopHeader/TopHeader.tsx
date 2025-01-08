@@ -1,7 +1,8 @@
-import SignBtn, { DarkModeToggle } from "@/Components/Btns/Btns";
 import React from "react";
 import { LuUserPlus } from "react-icons/lu";
 import { PiSignIn } from "react-icons/pi";
+
+import SignBtn, { DarkModeToggle } from "@/Components/Btns/Btns";
 export default function TopHeader() {
   return (
     <div className="global-w flex flex-col-reverse gap-y-10 sm:space-y-2 sm:flex-row justify-between items-center">

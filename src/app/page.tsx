@@ -15,5 +15,5 @@ export default function page() {
        <Content/>
        <Footer/>
     </div>
-  )
+  );
 }

@@ -1,5 +1,7 @@
-import React from 'react'
+import React from 'react';
+
 import { MenuItems } from "@/utils/Db";
+
 import SubMenuMobile from "./SubMenuMobile";
 export default function DownMenuMobile() {
   return (
@@ -18,5 +20,5 @@ export default function DownMenuMobile() {
       </div>
     ))}
   </ul>
-  )
+  );
 }

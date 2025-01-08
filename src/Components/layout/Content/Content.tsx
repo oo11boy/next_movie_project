@@ -1,6 +1,7 @@
-import React from 'react'
-import SideBar from './SideBar/SideBar'
-import SideMain from './SideMain'
+import React from 'react';
+
+import SideBar from './SideBar/SideBar';
+import SideMain from './SideMain';
 
 export default function Content() {
   return (
@@ -9,5 +10,5 @@ export default function Content() {
         <SideMain/>
         
     </div>
-  )
+  );
 }
