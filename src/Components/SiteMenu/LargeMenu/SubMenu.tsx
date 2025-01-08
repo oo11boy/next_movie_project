@@ -1,8 +1,13 @@
 import React from "react";
 import './Menu.css';
+import { MenuItems } from "@/utils/Db";
 
-export default function SubMenu({ item }) {
-  const renderSubMenu = (startIndex, endIndex) => {
+type SubMenuprop={
+  item:MenuItems;
+  
+}
+export default function SubMenu({ item }:SubMenuprop) {
+  const renderSubMenu = (startIndex:number, endIndex:number) => {
     return item.submenu
       .filter((_, index) => index >= startIndex && index <= endIndex)
       .map((subItem) => (

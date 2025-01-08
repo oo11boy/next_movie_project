@@ -5,7 +5,7 @@ import TopMobileMenu from "./TopMobileMenu";
 import DownMenuMobile from "./DownMenuMobile";
 
 export default function MobileMenu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
