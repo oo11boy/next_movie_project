@@ -1,0 +1,49 @@
+.menuNav {
+    display: flex;
+    padding: 16px;
+    gap: 40px; /* برابر با space-x-10 */
+  }
+  
+  .menuItemWithSubmenu {
+    display: flex;
+    cursor: pointer;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    gap: 8px; /* برابر با space-x-2 */
+    font-size: 1.5rem; /* برابر با text-2xl */
+    color: orange;
+  }
+  
+  .menuItem {
+    display: flex;
+    cursor: pointer;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px; /* برابر با space-x-2 */
+    font-size: 1.5rem; /* برابر با text-2xl */
+    color: orange;
+  }
+  
+  .itemTitle {
+    color: white;
+    font-size: 1.125rem; /* برابر با !text-lg */
+  }
+  
+
+  /* Menu.css */
+.menuNav {
+    position: relative;
+  }
+  
+  .subMenu {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .subMenu.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
