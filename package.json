@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint \"src/**/*.{js,ts,tsx}\" --quiet --fix",
+    "lint": "eslint",
     "prepare": "husky"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-icons": "^2.2.7",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "eslint-plugin-prettier": "^5.2.1",

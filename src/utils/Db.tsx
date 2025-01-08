@@ -1,4 +1,4 @@
-import {  FaFilm, FaTv, FaDownload, FaList } from 'react-icons/fa';
+import {  FaFilm, FaTv, FaList } from 'react-icons/fa';
 import { IoCloudDownloadOutline, IoHomeOutline } from "react-icons/io5";
 
 export const MenuItems = [

@@ -17,27 +17,14 @@ const eslintConfig = [
   {
     rules: {
       semi: "error",
-      'no-console': 'error',
+      "no-console": "error",
       "prefer-const": "error",
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "jsx-a11y/anchor-is-valid": "off",
       "import/no-unresolved": "off",
       "@typescript-eslint/no-unused-vars": "warn",
-      "import/order": [
-        "error",
-        {
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            "parent",
-            "sibling",
-            "index",
-          ],
-          "newlines-between": "always",
-        },
-      ],
+      "@next/next/no-img-element": "off"
     },
     settings: {
       react: {
