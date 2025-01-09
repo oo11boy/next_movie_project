@@ -3,8 +3,10 @@ import React from "react";
 import { LuUserPlus } from "react-icons/lu";
 
 import { GoSignIn } from "react-icons/go";
+import SignBtn from "@/Components/Btns/SignBtn";
+import { DarkModeToggle } from "@/Components/Btns/DarkModeToggleBtn";
 
-import SignBtn, { DarkModeToggle } from "@/Components/Btns/Btns";
+
 export default function TopHeader() {
   
   return (

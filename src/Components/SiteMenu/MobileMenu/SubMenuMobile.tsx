@@ -1,10 +1,10 @@
-import {  SubMenuMobileProps } from "@/Types/MenuTypes";
+import {  ISubMenuMobileProps } from "@/Types/MenuTypes";
 
 import React, { useState } from "react";
 import { MdExpandMore } from "react-icons/md";
 
 
-export default function SubMenuMobile({ item, index }: SubMenuMobileProps) {
+export default function SubMenuMobile({ item, index }: ISubMenuMobileProps) {
   const [openSubMenu, setOpenSubMenu] = useState<number | null>(null);
 
   const toggleSubMenu = (index: number) => {

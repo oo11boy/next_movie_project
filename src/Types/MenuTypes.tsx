@@ -1,25 +1,23 @@
-export interface MenuItems {
+type ISubMenuItemProps = {
   id: number;
   title: string;
+}
+export type  IMenuItemsProps = ISubMenuItemProps & {
   icon: React.ReactNode;
   link: string;
   img: string;
-  submenu: SubMenuItem[];
-}
-export interface SubMenuItem {
-  id: number;
-  title: string;
+  submenu: ISubMenuItemProps[];
 }
 
-export type toggleMenuprop = {
+export type IToggleMenuProps = {
   toggleMenu: () => void;
 };
 
-export type SubMenuprop = {
-  item: MenuItems;
+export type ISubMenuProps = {
+  item: IMenuItemsProps;
 };
 
-export interface SubMenuMobileProps {
-  item: MenuItems;
+export interface ISubMenuMobileProps {
+  item: IMenuItemsProps;
   index: number;
 }

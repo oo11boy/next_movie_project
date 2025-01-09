@@ -2,20 +2,6 @@
 import React, { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 
-type SignBtnProps={
-text:string;
-icon:React.ReactNode
-}
-export default function SignBtn({ text, icon }:SignBtnProps) {
-  return (
-    <button className="bg-[#484848] focus:outline-none transition-all ease-linear flex items-center justify-center space-x-2 text-white hover:bg-[orange] py-2 px-4 rounded-lg">
-      <span>{icon}</span>
-
-      <span>{text}</span>
-    </button>
-  );
-}
-
 export function DarkModeToggle() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
