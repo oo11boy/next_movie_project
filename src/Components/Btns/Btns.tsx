@@ -1,7 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
-export default function SignBtn({ text, icon }) {
+
+type SignBtnProps={
+text:string;
+icon:React.ReactNode
+}
+export default function SignBtn({ text, icon }:SignBtnProps) {
   return (
     <button className="bg-[#484848] focus:outline-none transition-all ease-linear flex items-center justify-center space-x-2 text-white hover:bg-[orange] py-2 px-4 rounded-lg">
       <span>{icon}</span>
@@ -12,7 +17,7 @@ export default function SignBtn({ text, icon }) {
 }
 
 export function DarkModeToggle() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);

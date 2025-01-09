@@ -1,26 +1,28 @@
+import {  SubMenuMobileProps } from "@/Types/MenuTypes";
+
 import React, { useState } from "react";
 import { MdExpandMore } from "react-icons/md";
-export default function SubMenuMobile({ item, index }) {
-  const [openSubMenu, setOpenSubMenu] = useState(null); 
 
-  const toggleSubMenu = (index) => {
-    setOpenSubMenu(openSubMenu === index ? null : index); 
+
+export default function SubMenuMobile({ item, index }: SubMenuMobileProps) {
+  const [openSubMenu, setOpenSubMenu] = useState<number | null>(null);
+
+  const toggleSubMenu = (index: number) => {
+    setOpenSubMenu(openSubMenu === index ? null : index);
   };
 
   return (
     <li className="text-white border-b mb-4 pb-4 border-[#555]">
       <div
         className="flex justify-between items-center cursor-pointer"
-        onClick={() => toggleSubMenu(index)} 
+        onClick={() => toggleSubMenu(index)}
       >
         <div className="flex justify-start gap-3">
-        <span className="text-[orange] text-3xl">{item.icon}</span>
-         
-        {item.title}
-       
+          <span className="text-[orange] text-3xl">{item.icon}</span>
+
+          {item.title}
         </div>
-   
-        
+
         <MdExpandMore
           className={`text-[orange] bg-slate-700 text-4xl transition-transform duration-300 ${
             openSubMenu === index ? "rotate-180" : ""

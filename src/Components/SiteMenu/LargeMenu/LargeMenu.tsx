@@ -7,7 +7,7 @@ import SubMenu from "./SubMenu";
 import "./Menu.css";
 
 export default function LargeMenu() {
-  const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
 
   return (
     
@@ -29,7 +29,7 @@ export default function LargeMenu() {
             </div>
           </li>
         ) : (
-          <li key={index} onMouseEnter={()=>setActiveSubmenu(false)} className="menuItem">
+          <li key={index} onMouseEnter={()=>setActiveSubmenu(index)} className="menuItem">
            <span className="transition ease-out hover:scale-110">{item.icon}</span>
             <span className="itemTitle">{item.title}</span>
           </li>
