@@ -1,9 +1,8 @@
+import { toggleMenuprop } from '@/Types/MenuTypes';
 import React from 'react';
 import { IoIosCloseCircle } from "react-icons/io";
 
-type toggleMenuprop={
-  toggleMenu:()=>void
-}
+
 export default function TopMobileMenu({toggleMenu}:toggleMenuprop) {
   return (
    <div className="flex relative items-center justify-center">

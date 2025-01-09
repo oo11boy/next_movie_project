@@ -1,20 +1,7 @@
-import { IconType } from 'react-icons';
 import {  FaFilm, FaTv, FaList } from 'react-icons/fa';
 import { IoCloudDownloadOutline, IoHomeOutline } from "react-icons/io5";
 
 
-export interface MenuItems{
-  id:number;
-  title:string;
-  icon:React.ReactNode;
-  link:string;
-  img:string;
-  submenu:SubMenuItem[]
-}
-export interface SubMenuItem {
-  id: number;
-  title: string;
-}
 
 export const MenuItems = [
   { id: 1, title: "home", icon:<IoHomeOutline />, link: "#" },

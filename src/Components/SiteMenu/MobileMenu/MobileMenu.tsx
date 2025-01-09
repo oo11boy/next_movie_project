@@ -28,6 +28,6 @@ export default function MobileMenu() {
         <TopMobileMenu toggleMenu={toggleMenu} />
         <DownMenuMobile />
       </div>
-      </div>
+    </div>
   );
 }

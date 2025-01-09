@@ -1,11 +1,9 @@
-import { MenuItems } from "@/utils/Db";
+import {  SubMenuMobileProps } from "@/Types/MenuTypes";
+
 import React, { useState } from "react";
 import { MdExpandMore } from "react-icons/md";
 
-interface SubMenuMobileProps {
-  item: MenuItems;
-  index: number;
-}
+
 export default function SubMenuMobile({ item, index }: SubMenuMobileProps) {
   const [openSubMenu, setOpenSubMenu] = useState<number | null>(null);
 
