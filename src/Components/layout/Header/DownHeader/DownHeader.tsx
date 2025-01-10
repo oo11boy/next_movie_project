@@ -12,8 +12,7 @@ export default function DownHeader() {
       <div className="global-w flex items-center justify-between">
         <MobileMenu />
         <LargeMenu />
-<SearchInput/>
-        
+        <SearchInput />
       </div>
     </div>
   );
