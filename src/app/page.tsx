@@ -10,12 +10,12 @@ import { GetDataTvMovie } from "@/utils/GetDataTvMovieApi";
 export default async function page() {
    const datamovietv=await GetDataTvMovie({type:"movie"});
   return (
-    <div>
+    <>
        <Header/>
        <Slider datamovietv={datamovietv}/>
        <SearchBox/>
        <Content/>
        <Footer/>
-    </div>
+    </>
   );
 }
