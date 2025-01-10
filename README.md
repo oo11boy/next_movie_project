@@ -1,4 +1,4 @@
-[![wakatime](https://wakatime.com/badge/user/b72ecd64-4687-4c33-88a0-6c63b4dd705e/project/9423e82b-a93d-4f5f-a7cf-2bb58223216e.svg)](https://wakatime.com/badge/user/b72ecd64-4687-4c33-88a0-6c63b4dd705e/project/9423e82b-a93d-4f5f-a7cf-2bb58223216e)
+[![CodeTime Badge](https://img.shields.io/endpoint?style=social&color=222&url=https%3A%2F%2Fapi.codetime.dev%2Fshield%3Fid%3D31032%26project%3Dnext_movie_project%26in=0)](https://codetime.dev)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
