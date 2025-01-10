@@ -22,7 +22,13 @@ export default function RootLayout({ children }: IRootLayoutProps) {
     <html lang="en">
       <body className={roboto.variable}>
         <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <ThemeProvider theme={theme}>
+         
+            {children}
+          
+           
+            
+            </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
