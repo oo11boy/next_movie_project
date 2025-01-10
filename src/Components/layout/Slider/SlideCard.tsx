@@ -1,4 +1,4 @@
-import { IResultApi } from "@/Types/GetProductTypes";
+import { IResultApi } from "@/Types/GetMovieTvTypes";
 
 export default function SlideCard({
   datamovietv,

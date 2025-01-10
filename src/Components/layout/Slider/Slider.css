@@ -1,13 +1,17 @@
 /* Slider.css */
-
 .creative-carousal--hero {
   width: 100%;
-  height: 70vh;
+  height: 70vh; /* ارتفاع پیش‌فرض برای صفحات کوچک‌تر */
   display: flex;
   flex-wrap: wrap;
   position: relative;
 }
 
+@media (min-width: 1700px) {
+  .creative-carousal--hero {
+    height: 700px; /* ارتفاع ثابت برای صفحات بزرگ‌تر از 1500 پیکسل */
+  }
+}
 .creative-carousal--hero .carousel-slider {
   width: 100%;
   display: flex;

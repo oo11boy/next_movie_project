@@ -6,7 +6,7 @@ import "swiper/swiper-bundle.css";
 import "./Slider.css";
 import SlideCard from "./SlideCard";
 import SlideProgress from "./SlideProgress";
-import { IResultApi } from "@/Types/GetProductTypes";
+import { IResultApi } from "@/Types/GetMovieTvTypes";
 
 const Slider = ({ datamovietv }: { datamovietv: IResultApi }) => {
 
@@ -46,7 +46,7 @@ const Slider = ({ datamovietv }: { datamovietv: IResultApi }) => {
     });
 
     return () => {
-      if (carouselslider) carouselslider.destroy(); // Check if initialized before destroying
+      if (carouselslider) carouselslider.destroy(); 
     };
   }, []);
 

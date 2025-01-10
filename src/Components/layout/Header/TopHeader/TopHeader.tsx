@@ -23,7 +23,7 @@ export default function TopHeader() {
           <img
             className="w-[247px] object-cover"
             src="https://digimoviez.com/wp-content/uploads/2023/09/logo-light.png"
-            alt=""
+            alt="logo"
           />
         </div>
       </div>
