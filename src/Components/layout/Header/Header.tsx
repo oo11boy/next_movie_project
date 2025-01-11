@@ -5,9 +5,9 @@ import DownHeader from "./DownHeader/DownHeader";
 
 export default function Header() {
   return (
-    <div>
+    <>
       <TopHeader />
       <DownHeader />
-    </div>
+    </>
   );
 }

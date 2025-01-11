@@ -1,4 +1,4 @@
-import { IinputApiProps, IResultApi } from "@/Types/GetProductTypes";
+import { IinputApiProps, IResultApi } from "@/Types/GetMovieTvTypes";
 
 export async function GetDataTvMovie(
   query: IinputApiProps
