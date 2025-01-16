@@ -2,7 +2,7 @@
 import Checkmarks from "@/Components/Checkmarks/Checkmarks";
 import RadioSelect from "@/Components/RadioSelect/RadioSelect";
 import { useSearchBox } from "@/ContextApi/SearchBoxContext";
-import React, { useState } from "react";
+import React from "react";
 
 export default function SearchBox() {
   const {searchText,setSearchText , selectedType ,handleSearch} = useSearchBox();

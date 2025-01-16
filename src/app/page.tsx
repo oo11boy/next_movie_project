@@ -11,12 +11,13 @@ export default async function page({
 }: {
   searchParams: IinputApiProps;
 }) {
-  const { genre, type="movie", searchText } = searchParams;
+  const { genre, type="movie", searchText ,page} = searchParams;
 
   const datamovietv = await GetDataTvMovie({
     type: type,
     genre: genre,
     searchText: searchText,
+    page:page
   });
 
   const datamovietvsidebar = await GetDataTvMovie({ type: "movie" });

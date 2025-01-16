@@ -1,7 +1,7 @@
 import React from "react";
 
 import SideBar from "./SideBar/SideBar";
-import SideMain from "./SideMain";
+import SideMain from "./SideMain/SideMain";
 import { IResultApi } from "@/Types/GetMovieTvTypes";
 
 

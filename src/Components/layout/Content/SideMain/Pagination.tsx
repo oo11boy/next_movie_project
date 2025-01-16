@@ -1,31 +1,34 @@
 "use client";
 import { IResultApi } from "@/Types/GetMovieTvTypes";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 
 export default function Pagination({ data }: { data: IResultApi }) {
-  const [currentPage, setCurrentPage] = useState(1); // حالت فعلی صفحه
-  const totalPages = data.total_pages; // تعداد کل صفحات
+  const [currentPage, setCurrentPage] = useState(1); 
+  const totalPages = data.total_pages; 
+  const pagesToShow = 10; 
 
-  // تعداد صفحاتی که در هر لحظه نمایش داده می‌شوند
-  const pagesToShow = 10;
-
-  // محاسبه محدوده صفحات
   const startPage = Math.max(1, currentPage - Math.floor(pagesToShow / 2));
   const endPage = Math.min(totalPages, startPage + pagesToShow - 1);
 
-  // تابع برای تغییر صفحه
+  const router = useRouter();
+  const searchParams = useSearchParams(); 
+
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
-      // در اینجا می‌توانید درخواست API برای دریافت داده‌های صفحه جدید را انجام دهید.
+
+     const params = new URLSearchParams(searchParams.toString());
+      params.set("page", page.toString());
+      router.push(`/?${params.toString()}`);
     }
   };
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4 mt-8">
-      {/* نمایش شماره صفحات */}
+ 
       <div className="flex space-x-2">
-        {/* دکمه قبلی */}
+   
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
@@ -35,10 +38,10 @@ export default function Pagination({ data }: { data: IResultApi }) {
               : "bg-blue-500 hover:bg-blue-600 text-white"
           }`}
         >
-          قبلی
+          Previous
         </button>
 
-        {/* دکمه "..." برای صفحات قبل */}
+     
         {startPage > 1 && (
           <button
             onClick={() => handlePageChange(startPage - 1)}
@@ -48,7 +51,7 @@ export default function Pagination({ data }: { data: IResultApi }) {
           </button>
         )}
 
-        {/* شماره صفحات */}
+      
         {Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index).map(
           (page) => (
             <button
@@ -65,7 +68,7 @@ export default function Pagination({ data }: { data: IResultApi }) {
           )
         )}
 
-        {/* دکمه "..." برای صفحات بعد */}
+      
         {endPage < totalPages && (
           <button
             onClick={() => handlePageChange(endPage + 1)}
@@ -75,7 +78,7 @@ export default function Pagination({ data }: { data: IResultApi }) {
           </button>
         )}
 
-        {/* دکمه بعدی */}
+       
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
@@ -85,13 +88,13 @@ export default function Pagination({ data }: { data: IResultApi }) {
               : "bg-blue-500 hover:bg-blue-600 text-white"
           }`}
         >
-          بعدی
+          Next
         </button>
       </div>
 
-      {/* نمایش اطلاعات صفحه فعلی */}
+     
       <div className="text-gray-600">
-        صفحه {currentPage} از {totalPages}
+        Page {currentPage} of {totalPages}
       </div>
     </div>
   );

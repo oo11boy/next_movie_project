@@ -11,6 +11,8 @@ interface SearchBoxContextType {
   handleSearch: () => void;
   selectedGenre: IGenreOutput | null;
   setSelectedGenre: (selectedGenre: IGenreOutput | null) => void;
+  currentPage:number
+  setCurrentPage:(  currentPage:number)=>void
 }
 
 export const SearchBoxContext = createContext<SearchBoxContextType | null>(
@@ -25,7 +27,7 @@ export const SearchBoxContextProvider = ({
   const [selectedType, setSelectedType] = useState<"movie" | "tv">("movie");
   const [searchText, setSearchText] = useState("");
   const [selectedGenre, setSelectedGenre] = useState<IGenreOutput | null>(null);
-
+  const [currentPage, setCurrentPage] = useState(1);
   const router = useRouter();
 
   const handleSearch = () => {
@@ -53,6 +55,8 @@ export const SearchBoxContextProvider = ({
     handleSearch,
     setSelectedGenre,
     selectedGenre,
+    currentPage,
+    setCurrentPage
   };
 
   return (
