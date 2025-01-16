@@ -14,7 +14,7 @@ export default async function page() {
        <Header/>
        <Slider datamovietv={datamovietv}/>
        <SearchBox/>
-       <Content/>
+       <Content datamovietv={datamovietv}/>
        <Footer/>
     </>
   );
