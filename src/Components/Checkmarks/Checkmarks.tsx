@@ -15,7 +15,7 @@ const MenuProps = {
     style: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
       width: 250,
-      backgroundColor: "#1C1C1C", // رنگ پس‌زمینه منو
+      backgroundColor: "#1C1C1C",
     },
   },
 };
@@ -23,7 +23,7 @@ const MenuProps = {
 export default function BasicSelect({ type }: { type: "movie" | "tv" }) {
   const { selectedGenre, setSelectedGenre } = useSearchBox();
   const [genres, setGenres] = useState<IGenreOutput[]>([]);
-  const [selectedId, setselectedId] = useState<number | null>(null);
+
   useEffect(() => {
     const fetchGenres = async () => {
       const data = await GetGenres({ type: type });
@@ -31,11 +31,11 @@ export default function BasicSelect({ type }: { type: "movie" | "tv" }) {
     };
     fetchGenres();
   }, [type]);
-  const handleChange = (event: SelectChangeEvent<string>) => {
-    setselectedId(parseInt(event.target.value, 10));
 
-    const selectedGenre = genres.find((genre) => genre.id === selectedId);
-    setSelectedGenre(selectedGenre || null);
+  const handleChange = (event: SelectChangeEvent<string>) => {
+    const selectedId = parseInt(event.target.value, 10); // دریافت id انتخاب‌شده
+    const selectedGenre = genres.find((genre) => genre.id === selectedId); // پیدا کردن ژانر
+    setSelectedGenre(selectedGenre || null); // به‌روزرسانی ژانر انتخاب‌شده در context
   };
 
   return (
@@ -47,7 +47,7 @@ export default function BasicSelect({ type }: { type: "movie" | "tv" }) {
         <Select
           labelId="genre-select-label"
           id="genre-select"
-          value={selectedGenre?.name}
+          value={selectedGenre?.id?.toString() || ""} // استفاده از id به عنوان value
           label="Genre"
           onChange={handleChange}
           MenuProps={MenuProps}
@@ -67,7 +67,7 @@ export default function BasicSelect({ type }: { type: "movie" | "tv" }) {
           {genres.map((genre) => (
             <MenuItem
               key={genre.id}
-              value={genre.id} // استفاده از id به عنوان value
+              value={genre.id.toString()} // استفاده از id به عنوان value
               sx={{
                 backgroundColor: "#1C1C1C", // رنگ پس‌زمینه منو آیتم‌ها
                 color: "white", // رنگ متن منو آیتم‌ها

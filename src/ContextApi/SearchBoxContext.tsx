@@ -1,6 +1,6 @@
 "use client";
 import { IGenreOutput } from "@/Types/GetGenreTypes";
-import { IinputApiProps } from "@/Types/GetMovieTvTypes";
+import { useRouter } from "next/navigation";
 import React, { createContext, ReactNode, useContext, useState } from "react";
 
 interface SearchBoxContextType {
@@ -8,10 +8,9 @@ interface SearchBoxContextType {
   setSelectedType: (type: "movie" | "tv") => void;
   setSearchText: (searchText: string) => void;
   searchText: string;
-  handleSearch:()=>void;
-  selectedGenre:IGenreOutput | null;
-  setSelectedGenre:(selectedGenre:IGenreOutput | null)=>void
-  searchArray:IinputApiProps;
+  handleSearch: () => void;
+  selectedGenre: IGenreOutput | null;
+  setSelectedGenre: (selectedGenre: IGenreOutput | null) => void;
 }
 
 export const SearchBoxContext = createContext<SearchBoxContextType | null>(
@@ -25,15 +24,26 @@ export const SearchBoxContextProvider = ({
 }) => {
   const [selectedType, setSelectedType] = useState<"movie" | "tv">("movie");
   const [searchText, setSearchText] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState<IGenreOutput | null>(null); 
-  const [searchArray,setSearchArray]=useState<IinputApiProps >({});
+  const [selectedGenre, setSelectedGenre] = useState<IGenreOutput | null>(null);
+
+  const router = useRouter();
+
   const handleSearch = () => {
-    const searchData = {
-      searchText: searchText,
-      type: selectedType,
-      genre:selectedGenre?.id,
-    };
-    setSearchArray(searchData);
+    const queryParams = new URLSearchParams();
+
+    if (selectedType) {
+      queryParams.append("type", selectedType);
+    }
+
+    if (selectedGenre?.id) {
+      queryParams.append("genre", selectedGenre.id.toString());
+    }
+
+    if (searchText) {
+      queryParams.append("searchText", searchText);
+    }
+
+    router.push(`/?${queryParams.toString()}`);
   };
   const value: SearchBoxContextType = {
     selectedType,
@@ -43,7 +53,6 @@ export const SearchBoxContextProvider = ({
     handleSearch,
     setSelectedGenre,
     selectedGenre,
-    searchArray
   };
 
   return (
