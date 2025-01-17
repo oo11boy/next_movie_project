@@ -1,6 +1,6 @@
 "use client";
-import Checkmarks from "@/Components/Checkmarks/Checkmarks";
-import RadioSelect from "@/Components/RadioSelect/RadioSelect";
+import Checkmarks from "@/Components/layout/SearchBox/Util/Checkmarks/Checkmarks";
+import RadioSelect from "@/Components/layout/SearchBox/Util/RadioSelect/RadioSelect";
 import { useSearchBox } from "@/ContextApi/SearchBoxContext";
 import React from "react";
 
