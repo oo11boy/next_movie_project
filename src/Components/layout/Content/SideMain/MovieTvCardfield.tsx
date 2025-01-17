@@ -2,8 +2,8 @@ import React, { ReactNode } from "react";
 
 type MovieTvCardfield={
     icon:ReactNode;
-    title:String;
-    content:any;
+    title:string;
+    content:React.ReactNode;
 }
 export default function MovieTvCardfield({ icon, title, content }:MovieTvCardfield) {
   return (
