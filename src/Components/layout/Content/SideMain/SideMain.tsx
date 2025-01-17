@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Pagination from "./Pagination";
+import Pagination from "./Util/Pagination";
 import { GetGenres } from "@/utils/GetGenreApi";
 import { useSearchParams } from "next/navigation";
 import { IResultApi } from "@/Types/GetMovieTvTypes";

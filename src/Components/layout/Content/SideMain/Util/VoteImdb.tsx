@@ -3,7 +3,7 @@ import React from "react";
 
 export default function VoteImdb({ item }: { item: IMovieTvOutput }) {
   return (
-    <div className="text-white  absolute top-4 right-4 text-center">
+    <div className="text-white  w-1/4 sm:w-[unset] m-auto sm:absolute sm:top-4 sm:right-4 text-center">
       <div className=" border-b-2 opacity-50 border-dashed">
         <span className="text-[orange] ">{item.vote_average}</span>/10
       </div>
