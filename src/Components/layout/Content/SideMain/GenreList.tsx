@@ -13,5 +13,5 @@ export default function GenreList({ item, listGenre }: GenreListProps) {
   );
   const genreNames = matchedGenres.map((genre) => genre.name).join(", ");
 
-  return <h2>{genreNames || "Unknown Genre"}</h2>;
+  return <span>{genreNames || "Unknown Genre"}</span>;
 }
