@@ -36,7 +36,7 @@ export default function SideMain({ data, type }: SideMainProps) {
   return (
     <div id="sidemain" className="bg-[green] w-full lg:w-9/12">
       {data.results.map((item) => (
-        <ItemMovieTv key={item.id} item={item} listGenre={listGenre} />
+        <ItemMovieTv key={item.id} type={type} item={item} listGenre={listGenre} />
       ))}
       <div>
         <Pagination data={data} />
