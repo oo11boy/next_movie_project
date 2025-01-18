@@ -31,7 +31,7 @@ export default function SideMain({ data, type }: SideMainProps) {
     if (page && sidemainElement) {
       sidemainElement.scrollIntoView({ behavior: "smooth" });
     }
-  }, [data]);
+  }, [data,page]);
 
   return (
     <div id="sidemain" className=" w-full lg:w-9/12">

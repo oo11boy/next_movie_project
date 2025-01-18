@@ -92,7 +92,7 @@ export default function Pagination({ data }: { data: IResultApi }) {
         </button>
       </div>
 
-      {/* Page Info */}
+   
       <div className="text-gray-600 text-sm sm:text-base">
         Page {currentPage} of {totalPages}
       </div>

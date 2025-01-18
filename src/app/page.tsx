@@ -11,13 +11,28 @@ export default async function page({
 }: {
   searchParams: IinputApiProps;
 }) {
-  const { genre, type="movie", searchText ,page} = searchParams;
+  const {
+    genre,
+    type = "movie",
+    searchText,
+    page,
+    ratingStart,
+    ratingEnd,
+    yearStart,
+    yearEnd,
+    withOriginalLanguage,
+  } = searchParams;
 
   const datamovietv = await GetDataTvMovie({
     type: type,
     genre: genre,
     searchText: searchText,
-    page:page
+    page: page,
+    ratingStart: ratingStart,
+    ratingEnd: ratingEnd,
+    yearStart: yearStart,
+    yearEnd: yearEnd,
+    withOriginalLanguage: withOriginalLanguage,
   });
 
   const datamovietvsidebar = await GetDataTvMovie({ type: "movie" });
@@ -27,7 +42,7 @@ export default async function page({
       <Header />
       <Slider datamovietv={datamovietvsidebar} />
       <SearchBox />
-      <Content data={datamovietv}  type={type} />
+      <Content data={datamovietv} type={type} />
       <Footer />
     </>
   );
