@@ -50,6 +50,7 @@ export const SearchBoxContextProvider = ({ children }: { children: ReactNode }) 
   ];
   
   const handleSearch = () => {
+  
     const queryParams = new URLSearchParams();
 
     if (selectedType) queryParams.append("type", selectedType);

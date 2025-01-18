@@ -71,7 +71,7 @@ export default function MultiRange() {
 const {rating,handleChangeRating}=useSearchBox();
 
   return (
-    <Box className="w-[65%]">
+    <Box className=" w-[98%] mt-2 sm:mt-[unset] md:w-[65%]">
      <Typography sx={{mb:0.5}}>
         Rating Range: {rating[0]} to {rating[1]}
       </Typography>
