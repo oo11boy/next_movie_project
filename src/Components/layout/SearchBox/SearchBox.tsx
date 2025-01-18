@@ -1,12 +1,13 @@
 "use client";
-import Checkmarks from "@/Components/layout/SearchBox/Util/Checkmarks/Checkmarks";
 import RadioSelect from "@/Components/layout/SearchBox/Util/RadioSelect/RadioSelect";
 import { useSearchBox } from "@/ContextApi/SearchBoxContext";
 import React from "react";
+import TypeCheckmarks from "./Util/Checkmarks/TypeCheckmarks";
+import LanguageCheckmarks from "./Util/Checkmarks/LanguageCheckmarks";
 
 export default function SearchBox() {
-  const {searchText,setSearchText , selectedType ,handleSearch} = useSearchBox();
-
+  const { searchText, setSearchText, selectedType, handleSearch } =
+    useSearchBox();
 
   return (
     <div className="global-w flex justify-start h-[300px] text-white  bg-[#242424]">
@@ -26,9 +27,8 @@ export default function SearchBox() {
           <RadioSelect />
         </div>
 
-        <div className="w-3/12 flex">
-          <Checkmarks type={selectedType} />
-        </div>
+        <TypeCheckmarks type={selectedType} />
+        <LanguageCheckmarks />
 
         <div className="w-full flex justify-end">
           <button
