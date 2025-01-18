@@ -3,7 +3,6 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { useState } from "react";
 import { useSearchBox } from "@/ContextApi/SearchBoxContext";
 
 const ITEM_HEIGHT = 48;
@@ -19,7 +18,7 @@ const MenuProps = {
 };
 
 export default function StartYearCheckmarks() {
-const {handleChangeStartYear,selectedYear,startYear}=useSearchBox()
+const {handleChangeStartYear,selectedYear,startYear}=useSearchBox();
 
   return (
     <div className="w-[32%] flex">
