@@ -5,8 +5,9 @@ import React, { useState } from "react";
 
 export default function Pagination({ data }: { data: IResultApi }) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false); // State برای مدیریت لودینگ
   const totalPages = data.total_pages;
-  const pagesToShow = 5; // تعداد صفحات نمایش داده شده در یک زمان (برای دستگاه‌های کوچک کمتر شده است)
+  const pagesToShow = 5;
 
   const startPage = Math.max(1, currentPage - Math.floor(pagesToShow / 2));
   const endPage = Math.min(totalPages, startPage + pagesToShow - 1);
@@ -14,13 +15,18 @@ export default function Pagination({ data }: { data: IResultApi }) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = async (page: number) => {
     if (page >= 1 && page <= totalPages) {
+      setIsLoading(true); 
       setCurrentPage(page);
 
       const params = new URLSearchParams(searchParams.toString());
       params.set("page", page.toString());
       router.push(`/?${params.toString()}`);
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      setIsLoading(false); 
     }
   };
 
@@ -31,9 +37,9 @@ export default function Pagination({ data }: { data: IResultApi }) {
         {/* Previous Button */}
         <button
           onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
+          disabled={currentPage === 1 || isLoading}
           className={`px-3 py-1 sm:px-4 sm:py-2 rounded transition-colors ${
-            currentPage === 1
+            currentPage === 1 || isLoading
               ? "bg-gray-300 cursor-not-allowed"
               : "bg-orange-500 hover:bg-orange-600 text-white"
           }`}
@@ -45,6 +51,7 @@ export default function Pagination({ data }: { data: IResultApi }) {
         {startPage > 1 && (
           <button
             onClick={() => handlePageChange(startPage - 1)}
+            disabled={isLoading}
             className="px-3 py-1 sm:px-4 sm:py-2 rounded bg-orange-500 hover:bg-orange-600 text-white"
           >
             ...
@@ -57,9 +64,10 @@ export default function Pagination({ data }: { data: IResultApi }) {
             <button
               key={page}
               onClick={() => handlePageChange(page)}
+              disabled={isLoading}
               className={`px-3 py-1 sm:px-4 sm:py-2 rounded transition-colors ${
                 currentPage === page
-                  ? "bg-white text-orange-500 border border-orange-500" // حالت انتخاب‌شده
+                  ? "bg-white text-orange-500 border border-orange-500"
                   : "bg-orange-500 hover:bg-orange-600 text-white"
               }`}
             >
@@ -72,6 +80,7 @@ export default function Pagination({ data }: { data: IResultApi }) {
         {endPage < totalPages && (
           <button
             onClick={() => handlePageChange(endPage + 1)}
+            disabled={isLoading}
             className="px-3 py-1 sm:px-4 sm:py-2 rounded bg-orange-500 hover:bg-orange-600 text-white"
           >
             ...
@@ -81,9 +90,9 @@ export default function Pagination({ data }: { data: IResultApi }) {
         {/* Next Button */}
         <button
           onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
+          disabled={currentPage === totalPages || isLoading}
           className={`px-3 py-1 sm:px-4 sm:py-2 rounded transition-colors ${
-            currentPage === totalPages
+            currentPage === totalPages || isLoading
               ? "bg-gray-300 cursor-not-allowed"
               : "bg-orange-500 hover:bg-orange-600 text-white"
           }`}
@@ -92,7 +101,12 @@ export default function Pagination({ data }: { data: IResultApi }) {
         </button>
       </div>
 
-   
+      {isLoading && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+        </div>
+      )}
+
       <div className="text-gray-600 text-sm sm:text-base">
         Page {currentPage} of {totalPages}
       </div>
