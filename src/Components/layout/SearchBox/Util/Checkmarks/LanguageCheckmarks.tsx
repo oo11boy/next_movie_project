@@ -34,7 +34,7 @@ export default function LanguageCheckmarks() {
   ];
 
   return (
-    <div className="w-3/12 flex">
+    <div className="w-[32%] flex">
       <Box className="w-full">
         <FormControl fullWidth>
           <InputLabel id="Language-select-label" sx={{ color: "orange" }}>

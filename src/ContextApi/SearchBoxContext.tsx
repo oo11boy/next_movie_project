@@ -17,9 +17,14 @@ interface SearchBoxContextType {
   LanguageSelected: string;
   setLanguageSelected: (LanguageSelected: string) => void;
   handleChangelanguage: (event: SelectChangeEvent<string>) => void;
+  Rating: number[];
+  setRating: (Rating: number[]) => void;
+  handleChangeRating: (event: Event, newValue: number | number[]) => void;
 }
 
-export const SearchBoxContext = createContext<SearchBoxContextType | null>(null);
+export const SearchBoxContext = createContext<SearchBoxContextType | null>(
+  null
+);
 
 export const SearchBoxContextProvider = ({
   children,
@@ -31,6 +36,7 @@ export const SearchBoxContextProvider = ({
   const [selectedGenre, setSelectedGenre] = useState<IGenreOutput | null>(null);
   const [LanguageSelected, setLanguageSelected] = useState<string>("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [Rating, setRating] = useState<number[]>([3, 7]);
   const router = useRouter();
 
   const handleSearch = () => {
@@ -52,6 +58,10 @@ export const SearchBoxContextProvider = ({
       queryParams.append("withOriginalLanguage", LanguageSelected);
     }
 
+    if (Rating) {
+      queryParams.append("ratingStart", Rating[0].toString());
+      queryParams.append("ratingEnd", Rating[1].toString());
+    }
     router.push(`/?${queryParams.toString()}`);
   };
 
@@ -59,6 +69,9 @@ export const SearchBoxContextProvider = ({
     setLanguageSelected(event.target.value);
   };
 
+  const handleChangeRating = (event: Event, newValue: number | number[]) => {
+    setRating(newValue as number[]);
+  };
   const value: SearchBoxContextType = {
     selectedType,
     setSelectedType,
@@ -72,6 +85,9 @@ export const SearchBoxContextProvider = ({
     handleChangelanguage,
     LanguageSelected,
     setLanguageSelected,
+    Rating,
+    setRating,
+    handleChangeRating,
   };
 
   return (
