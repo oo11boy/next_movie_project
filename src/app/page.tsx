@@ -1,3 +1,4 @@
+import { PageProps } from ".next/types/app/layout";
 import Content from "@/Components/layout/Content/Content";
 import Footer from "@/Components/layout/Footer/Footer";
 import Header from "@/Components/layout/Header/Header";
@@ -9,7 +10,7 @@ import { GetDataTvMovie } from "@/utils/GetDataTvMovieApi";
 export default async function page({
   searchParams,
 }: {
-  searchParams: IinputApiProps;
+  searchParams: PageProps['searchParams'] & IinputApiProps;
 }) {
   const {
     genre,
