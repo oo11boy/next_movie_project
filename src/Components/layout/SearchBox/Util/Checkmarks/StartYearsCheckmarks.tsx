@@ -17,35 +17,22 @@ const MenuProps = {
   },
 };
 
-export default function LanguageCheckmarks() {
- const {LanguageSelected,handleChangelanguage}=useSearchBox();
-  const language = [
-    { id: 1, value: "en", Language: "English" },
-    { id: 2, value: "fa", Language: "Persian" },
-    { id: 3, value: "es", Language: "Spanish" },
-    { id: 4, value: "zh", Language: "Chinese" },
-    { id: 5, value: "fr", Language: "French" },
-    { id: 6, value: "ko", Language: "Korean" },
-    { id: 7, value: "ja", Language: "Japanese" },
-    { id: 8, value: "de", Language: "German" },
-    { id: 9, value: "it", Language: "Italian" },
-    { id: 10, value: "ru", Language: "Russian" },
-    { id: 11, value: "hi", Language: "Hendi" },
-  ];
+export default function StartYearCheckmarks() {
+const {handleChangeStartYear,selectedYear,startYear}=useSearchBox();
 
   return (
     <div className="w-[32%] flex">
       <Box className="w-full">
         <FormControl fullWidth>
-          <InputLabel id="Language-select-label" sx={{ color: "orange" }}>
-            Language
+          <InputLabel id="StartYear-select-label" sx={{ color: "orange" }}>
+            StartYear
           </InputLabel>
           <Select
-            labelId="Language-select-label"
-            id="Language-select"
-            value={LanguageSelected}
-            label="Language"
-            onChange={handleChangelanguage}
+            labelId="StartYear-select-label"
+            id="StartYear-select"
+            value={selectedYear}
+            label="StartYear"
+            onChange={handleChangeStartYear}
             MenuProps={MenuProps}
             sx={{
               color: "white",
@@ -59,7 +46,7 @@ export default function LanguageCheckmarks() {
                 },
             }}
           >
-            {language.map((item) => (
+            {startYear.map((item) => (
               <MenuItem
                 key={item.id}
                 value={item.value.toString()}
@@ -74,7 +61,7 @@ export default function LanguageCheckmarks() {
                   },
                 }}
               >
-                {item.Language}
+                {item.startYear}
               </MenuItem>
             ))}
           </Select>
@@ -82,4 +69,4 @@ export default function LanguageCheckmarks() {
       </Box>
     </div>
   );
-};
+}
