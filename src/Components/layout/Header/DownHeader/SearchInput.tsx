@@ -4,7 +4,7 @@ import { IoIosSearch } from "react-icons/io";
 export default function SearchInput() {
   const {handleSearch,setSearchText,searchText}=useSearchBox();
   return (
-    <form className="relative" action="">
+    <div className="relative" >
       <input
         className="bg-black focus:outline-none text-white rounded-lg  py-3 px-4"
         type="text"
@@ -13,6 +13,6 @@ export default function SearchInput() {
         placeholder="search..."
       />
       <IoIosSearch onClick={handleSearch} className="absolute top-1/2 right-3 transform -translate-y-1/2 text-orange-500 text-3xl" />
-    </form>
+    </div>
   );
 }

@@ -18,7 +18,7 @@ export default function SearchBox() {
         <TravelExploreIcon sx={{ fontSize: "6em", color: "orange" }} />
       </div>
 
-      <form onSubmit={handleSearch} className=" w-full lg:w-10/12 content-start gap-4  px-3 py-5  flex flex-wrap  justify-center lg:justify-start">
+      <div  className=" w-full lg:w-10/12 content-start gap-4  px-3 py-5  flex flex-wrap  justify-center lg:justify-start">
         <div className="w-full flex-col sm:flex-row  sm:h-[30px] flex space-x-4">
           <SearcBoxInput
             searchText={searchText}
@@ -32,7 +32,7 @@ export default function SearchBox() {
         <StartYearCheckmarks />
         <MultiRange />
         <SearchBtn handleSearch={handleSearch} />
-      </form>
+      </div>
     </div>
   );
 }
