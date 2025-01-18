@@ -27,7 +27,7 @@ export default function RadioSelect() {
         <input
           type="radio"
           name="type"
-          value="serie"
+          value="tv"
           className="hidden"
           onChange={() => setSelectedType("tv")}
         />
