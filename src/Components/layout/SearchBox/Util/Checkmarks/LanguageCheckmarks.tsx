@@ -18,7 +18,7 @@ const MenuProps = {
 };
 
 export default function LanguageCheckmarks() {
- const {LanguageSelected,handleChangelanguage}=useSearchBox();
+ const {languageSelected,handleChangeLanguage}=useSearchBox();
   const language = [
     { id: 1, value: "en", Language: "English" },
     { id: 2, value: "fa", Language: "Persian" },
@@ -34,7 +34,7 @@ export default function LanguageCheckmarks() {
   ];
 
   return (
-    <div className="w-[32%] flex">
+    <div className="w-[30%]  sm:w-[31%] lg:w-[31%] flex">
       <Box className="w-full">
         <FormControl fullWidth>
           <InputLabel id="Language-select-label" sx={{ color: "orange" }}>
@@ -43,9 +43,9 @@ export default function LanguageCheckmarks() {
           <Select
             labelId="Language-select-label"
             id="Language-select"
-            value={LanguageSelected}
+            value={languageSelected}
             label="Language"
-            onChange={handleChangelanguage}
+            onChange={handleChangeLanguage}
             MenuProps={MenuProps}
             sx={{
               color: "white",

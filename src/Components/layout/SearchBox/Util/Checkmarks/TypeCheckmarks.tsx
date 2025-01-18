@@ -39,7 +39,7 @@ export default function TypeCheckmarks({ type }: { type: "movie" | "tv" }) {
   };
 
   return (
-    <div className="w-[32%] flex">
+    <div className="w-[30%]  sm:w-[32%] lg:w-[32%] xl:w-[33%] flex">
       <Box className="w-full">
         <FormControl fullWidth>
           <InputLabel id="genre-select-label" sx={{ color: "orange" }}>
