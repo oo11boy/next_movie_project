@@ -67,20 +67,20 @@ function AirbnbThumbComponent(props: AirbnbThumbComponentProps) {
   );
 }
 
-export default function CustomizedSlider() {
-const {Rating,handleChangeRating}=useSearchBox();
+export default function MultiRange() {
+const {rating,handleChangeRating}=useSearchBox();
 
   return (
     <Box className="w-[65%]">
      <Typography sx={{mb:0.5}}>
-        Rating Range: {Rating[0]} to {Rating[1]}
+        Rating Range: {rating[0]} to {rating[1]}
       </Typography>
       
        <AirbnbSlider
        sx={{color:"orange"}}
         slots={{ thumb: AirbnbThumbComponent }}
         getAriaLabel={(index) => (index === 0 ? 'Minimum value' : 'Maximum value')}
-        value={Rating}
+        value={rating}
         onChange={handleChangeRating}
         min={1}
         max={10}

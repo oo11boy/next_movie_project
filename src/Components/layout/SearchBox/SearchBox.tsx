@@ -5,6 +5,7 @@ import React from "react";
 import TypeCheckmarks from "./Util/Checkmarks/TypeCheckmarks";
 import LanguageCheckmarks from "./Util/Checkmarks/LanguageCheckmarks";
 import MultiRange from "./Util/MultiRange/MultiRange";
+import StartYearCheckmarks from "./Util/Checkmarks/StartYearsCheckmarks";
 
 export default function SearchBox() {
   const { searchText, setSearchText, selectedType, handleSearch } =
@@ -30,7 +31,7 @@ export default function SearchBox() {
 
         <TypeCheckmarks type={selectedType} />
         <LanguageCheckmarks />
-        <LanguageCheckmarks />
+        <StartYearCheckmarks />
         <MultiRange />
         <div className="flex w-[33%] justify-end">
           <button
