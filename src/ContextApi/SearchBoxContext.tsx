@@ -36,7 +36,6 @@ export const SearchBoxContextProvider = ({ children }: { children: ReactNode }) 
   const [currentPage, setCurrentPage] = useState(1);
   const [rating, setRating] = useState<number[]>([3, 7]);
   const [selectedYear, setSelectedYear] = useState("");
-
   const router = useRouter();
 
   const startYearArray = [
